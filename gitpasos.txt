@@ -1,10 +1,11 @@
 1. En mi terminal en el cd C:\Users\juana\Desktop\Node\06-expressNode>
 2. Comando:
-git init
+git init (para inicializar el repositiorio en la carpeta del proyecto Node)
 3. Comando:
-git add .
+git add . (agregara todos los archivos, es recomendable 
+haber agregado el archivo gitignore)
 4. Comando:
-git commit -m "Webserver"
+git commit -m "Webserver" (Cualquier comentario)
 
 =========================================
 COPIA DE PASOS DEL CURSO GIT RESUMIDOS
@@ -34,8 +35,8 @@ repositorio.
 main el nombre por el que queremos cambiarla)
 
 7.git add index.html (o nombre del archivo que deseo agregar)
-si tenemos mas de una carpeta usamos git add . (esto agregara todos 
-los archuivos de la carpeta)
+SI tenemos mas de una carpeta usamos git add . (esto agregara todos 
+los archivos de la carpeta)
 
 8. Finalmente git commit -m "Dejo cualquier mensaje"
 Nota: con git log podemos ver los cambios hechos en dicho archivo.
@@ -62,7 +63,9 @@ git config --global user.email "correo apropiado"
 
 ========================================================================
 
-PASOS PARA SUBIR A GITHUB FALTARIA CREAR NUEVA RAMA PARA TRABAJO PRIMERO
+PASOS PARA SUBIR A GITHUB
+
+PASO: ingresar a github crear un repositorio nuevo que incluya el readme
 
 11. git remote add origin git@github.com:JuanCarlosMelendez/CursoNodejsTypescript.git
 esta es la direccion ssh que copie de mi repositorio creado en github
@@ -75,6 +78,9 @@ git remote
 git remote -v
 (debera indicarnos que tenemos una direccion donde hacer un fetch y push como sigue)
 
+=======================
+|||NOTA NO ASUSTARSE|||
+=======================
 14. Traemos los cambios remotos de github que traera el archivo readme
 sino dara error
 git pull origin main
@@ -90,3 +96,42 @@ cls (limpia la consola)
 
 17. Ahora podemos subir a github con el comando:
 git push origin main
+
+18.	git log (para ver los commits hechos
+	git log --stat (para ver aun mas detalles) (sales con shift + z)
+	git show (para mostrar datos como a donde apunta head y las ramas	
+	git add . (para hacer add antes de commit)
+	git commit -m "" (obligatorio dejar mensaje) ó 
+	git commit (se abrira la pantalla para agregar comentario)
+	git branch (muestra solo las ramas)
+	git show-branch
+	git show-branch --all
+	gitk (abre el bash version escritorio para ver el arbolito)
+
+    
+(se sale con Esc + shift + z varias veces)
+
+19.
+
+=======================================================================
+ CREAR RAMAS DE GIT PARA SUBIR LUEGO A GITHUB
+=======================================================================
+
+**Ramas Git y Github**
+git show-branch --all
+
+Para subir al github una nueva rama hacemos:
+1. git pull origin main (buenas practicas primero nos traemos lo que sta en nube)
+
+2. git branch 06ExpressNode (ese 06ExpressNode es el nombre de la rama a crear)
+
+3. Si ahcemos git show para ver a donde apunta el head.
+
+2. git checkout 06ExpressNode (donde 06ExpressNode es nombre de la rama a la
+que deseo moverme) (al hacer esto me indicara que me he movido a otra rama)
+
+3. git pull origin main (buena practica para traernos lo que se ha subido
+o modificado en el proyecto)
+
+3. git push origin 06ExpressNode (donde 06ExpressNode es el nombre de mi rama 
+en la que trabajo y quiero hacer push)
