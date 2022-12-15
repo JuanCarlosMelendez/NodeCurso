@@ -1,0 +1,92 @@
+1. En mi terminal en el cd C:\Users\juana\Desktop\Node\06-expressNode>
+2. Comando:
+git init
+3. Comando:
+git add .
+4. Comando:
+git commit -m "Webserver"
+
+=========================================
+COPIA DE PASOS DEL CURSO GIT RESUMIDOS
+=========================================
+
+**CREAR ARCHIVO GIT**
+Pasos:
+1. Crear carpeta proyecto.
+
+2. Abrir git bash.
+
+3.cd _proyecto2_git (es el nombre de la carpeta del proyecto)
+Nota: podemos usar pwd para confirmar la ruta de la carpeta donde estamos
+ubicados en git antes de inicializar el repositorio.
+
+4. git init (para inicializar el repositorio en dicha carpeta)
+Nota: con el comando ls -al podemos chequear los archivos del repositorio
+deberian estar los archivos iniciales de la carpeta mas los creados del
+repositorio.
+
+5.  Con git status podemos revisar si hay cambios que agregar o no.
+
+6. Cambiamos el nombre de la rama de master a main como sigue:
+-Nos vamos a la rama master (si estamos iniciando ya estamos ahi)
+-Aplicamos el comando: git branch -m master main  
+(donde master es la rama a la que queremos cambiar el nombre y 
+main el nombre por el que queremos cambiarla)
+
+7.git add index.html (o nombre del archivo que deseo agregar)
+si tenemos mas de una carpeta usamos git add . (esto agregara todos 
+los archuivos de la carpeta)
+
+8. Finalmente git commit -m "Dejo cualquier mensaje"
+Nota: con git log podemos ver los cambios hechos en dicho archivo.
+
+9. Creamos una rama para desarrollo que es como la del jefe:
+-Nos ubicamos en la rama main y aqui agrego una rama development comando:
+git branch development.
+-Nos movemos a dicha rama con git checkout development (o nombre de la rama creada)
+
+10. Repetimos y creamos una rama que es donde realmente trabajare ( esto
+se hace para simular la forma de trabajar real con git y git hub con 
+una rama de supervisor y una de desarrollador)
+
+=======================================================================
+Nota: en caso de no tener configurado el git con nombre de usuario
+y correo es recomendarlo configurarlo antes de hacer el primer commit
+
+1. Chequeamos la configuracion con git config --list 
+sino aparece nombre y correo correctos los modificamos con
+(en terminal visualstudio code se sale con shift + z)
+
+2.git config --global user.name "Nombre apropiado"
+git config --global user.email "correo apropiado"
+
+========================================================================
+
+PASOS PARA SUBIR A GITHUB FALTARIA CREAR NUEVA RAMA PARA TRABAJO PRIMERO
+
+11. git remote add origin git@github.com:JuanCarlosMelendez/CursoNodejsTypescript.git
+esta es la direccion ssh que copie de mi repositorio creado en github
+
+12. Comprobamos haciendo:
+git remote
+(deberia aparecer un origen)
+
+13. Hacemos 
+git remote -v
+(debera indicarnos que tenemos una direccion donde hacer un fetch y push como sigue)
+
+14. Traemos los cambios remotos de github que traera el archivo readme
+sino dara error
+git pull origin main
+
+15.Git se reusara a fucionar (merge) historias no relacionadas, pero hacemos
+un comando para permitirlo, esto es por como trabaja github y compila no es gran cosa
+git pull origin main --allow-unrelated-histories
+
+16. Chequeamos como estan mis archivos con 
+ls 
+git status (para verificar si no hay nada a lo que hacerle commit)
+cls (limpia la consola)
+
+17. Ahora podemos subir a github con el comando:
+git push origin main

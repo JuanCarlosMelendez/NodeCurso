@@ -1,0 +1,73 @@
+1. copiamos la carpeta a usar y la tiramos en la 
+terminal, delante colocamos cd y con ello quedamos
+ubicados en la carpeta del proyecto activo.
+ejem:
+cd 'c:\Users\juana\Desktop\Curso Node2\03-ts-basesNode'
+
+2.instalamos typescript de manera global:
+npm i -g typescript
+
+3.inicializamos node:
+npm init -y
+
+4.Creamos el archivo base app.ts
+export const nombre = 'JuanC';
+
+console.log(nombre);
+
+5.Creamos el tsconfig.json:
+tsc --init
+
+6.Configuramos el tsconfig.json:
+"outDir": "./dist" //carpeta donde se comprime el .json
+"sourceMap": true, 
+"moduleResolution": "node",  
+
+7.Vamos al app.ts y hacemos tsc, esto creará en la 
+carpeta /dist un archivo de javascript compilado
+desde typescript.
+
+-----------------------------------
+YA PODEMOS LLAMAR EL ARCHIVO APP.JS 
+-----------------------------------
+con node dist/app.js  ó 
+ts-node app.ts
+
+8. Configuramos el tslint:
+    - npm i tslint --save-dev
+    - instalamos typescript de manera local :
+        npm i typescript --save-dev
+    - Llamamos al tslint: ./node_modules/.bin/tslint --init
+    - Vamos al archivo ttslint.json y configuramos 
+    una nueva regla:
+        "rules": {
+        "no-console":false
+    },//quedaria asi.
+
+=====================================
+SI DESEAMOS LEVANTAR SERVIDORES 
+INSTALAMOS EXPRESS Y TODO LO DESEAMOS
+COMO SIGUE
+=====================================
+
+9. Instalamos express cors dotenv:
+npm i express cors dotenv
+
+10. Instalamos express cors dotenv como desarrollo:
+npm i --save-dev @types/express 
+npm i --save-dev @types/dotenv 
+
+(acá es donde creamos el archivo .env con el proyectoy 
+lo impportamos:
+import dotenv from 'dotenv'
+dotenv.config();
+)
+11.Intalamos nodemon: en 
+este caso parece estar instalado de manera global
+y solo haria falta llamarlo
+
+12. Corremos el tsc -w:
+vamos a la carpeta del proyecto haciendo cd:
+cd 'c:\Users\juana\Desktop\Curso Node2\03-ts-basesNode'
+tsc -w ó tsc --watch
+//obligatoriamente debe estar en la carpeta de trabajo
