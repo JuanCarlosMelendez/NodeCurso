@@ -26,12 +26,17 @@ tsc --init
 7.Vamos al app.ts y hacemos tsc, esto creará en la 
 carpeta /dist un archivo de javascript compilado
 desde typescript.
+TAMBIEN PODEMOS HACER EL tsc -w para empezar a 
+compilar de manera activa a js. Es mejor al parecer
+en estos momentos.
 
 -----------------------------------
 YA PODEMOS LLAMAR EL ARCHIVO APP.JS 
 -----------------------------------
 con node dist/app.js  ó 
 ts-node app.ts
+con nodemon hacemos (para que siga cambios activamente):
+nodemon dist/app.js
 
 8. Configuramos el tslint:
     - npm i tslint --save-dev
@@ -71,3 +76,15 @@ vamos a la carpeta del proyecto haciendo cd:
 cd 'c:\Users\juana\Desktop\Curso Node2\03-ts-basesNode'
 tsc -w ó tsc --watch
 //obligatoriamente debe estar en la carpeta de trabajo
+
+LEVANTAR SERVIDOR BUSCAR NPM EXPRESS Y SEGUIR LOS PASOS
+TRADUCIENDOLOS AL typescript
+
+==========================================
+                   CORS 
+==========================================
+- Ya instalamas cors pero no las dependencias de desarrollo:
+npm install --save @types/cors
+
+[[[[[INFO DE USO EN npm buscar @types/cors]]]]]
+
