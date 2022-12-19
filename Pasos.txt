@@ -88,3 +88,78 @@ npm install --save @types/cors
 
 [[[[[INFO DE USO EN npm buscar @types/cors]]]]]
 
+
+======================================================
+             USANDO UN CLUSTER DE ATLASDB
+======================================================
+
+//Borrar es clave para prueba cruster
+usuarios
+user_node_cafe
+2qFu1aOlX8jMmUJN
+
+1. Accedemos al programa con clave y seleccionamos y creamos un cluster gratuito.
+2. Una vez creado, creamos un usuario en la parte de database Acccess, dicho usuario
+se coloca en el .env como 
+USER=user_node_cafe
+PASS=2qFu1aOlX8jMmUJN
+//esta clave la autogenere con el programa
+
+3. Selecccionamos built-role:
+Read and write any database
+
+4.Nos vamos al cluster y seleccionamos conect, pregunta por que medio deseas conectarte
+y seleccionamos con compassDB, seleccionamos i have MongoDBcompas.
+Copiamos la cadena de conexion en este caso fue:
+mongodb+srv://<username>:<password>@miclustercafe.qpyb6ae.mongodb.net/test
+
+5. Nos vamos al .env y la colocamos como sigue:
+
+MONGODB_CNN=mongodb+srv://<username>:<password>@miclustercafe.qpyb6ae.mongodb.net/test
+
+ahora sustituimos el <username> por mi usuario definido user_node_cafe Y
+el <password> por 2qFu1aOlX8jMmUJN eliminando los signos de mayor y menor tambien.
+Queda asi:
+
+MONGODB_CNN=mongodb+srv://user_node_cafe:2qFu1aOlX8jMmUJN@miclustercafe.qpyb6ae.mongodb.net/test
+tambien eliminamos el /test podemos poner cualquier cosa en este caso cafedb
+eso seria el nombre de mi base de datos
+
+
+MONGODB_CNN=mongodb+srv://user_node_cafe:2qFu1aOlX8jMmUJN@miclustercafe.qpyb6ae.mongodb.net/cafeDB
+
+tomamos la direccion: mongodb+srv://user_node_cafe:2qFu1aOlX8jMmUJN@miclustercafe.qpyb6ae.mongodb.net/cafeDB
+abrimos el mongodb compas y pegamos donde dice localhost y todo eso el enlace, si ingresa sin errores
+habremos creado una base de datos con el cluster
+Quedará grabada la BD y podremos empezar a trabajar con ella
+Se puede cerrar la pagina ya que trabajaremos con el compass aunque tmb se podria trabajar desde la web
+
+=====================================================
+                  USANDO MONGOOSE
+=====================================================
+
+1. Vamos a la web de mongoosejs.com y mongoose con typescript
+2. Hacemos:
+npm i mongoose
+3. Instalamos dependencias de desarrollo para mongodb:
+npm i --save-dev @types/mongoose
+4. Creamos una carpeta llamada database y un archivo config.ts
+5. Ahi importamos:
+    import "dotenv/config";
+    import mongoose, { connect } from "mongoose";
+6. Conectamos con una funcion asincrona, puede verse en el ejemplo de la web o como esta en el ejercicio
+        
+        mongoose.set('strictQuery', false);
+
+        async  function dbConnect(): Promise<void> {
+            const MONGODB_CNN = <string>process.env.MONGODB_CNN;
+            await connect  (MONGODB_CNN);
+        }
+        export default dbConnect;
+7.  Creamos una interfaz para ayudar con el tipado de los usuarios en una carpeta interfaces
+8.  En la carpeta modelos creamos el archivo usuario:
+    -Importaos el Schema de mongoose, model y la interface creada de usuario <user>
+    -Definimos el Schema como se hizo en el documento.
+    -Finalmente creamos la constante a exportar en base al Schema definido y la exportamos por defecto.
+9.
+

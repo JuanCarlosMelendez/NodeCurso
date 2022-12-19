@@ -135,3 +135,19 @@ o modificado en el proyecto)
 
 3. git push origin 06ExpressNode (donde 06ExpressNode es el nombre de mi rama 
 en la que trabajo y quiero hacer push)
+
+=================================================================
+ CREAR UN GIT TAG CURSO Node
+ ================================================================
+ 1. Hacemos:
+ git tag 
+ 2. Hacemos:
+ git tag -a v1.0.0 -m "Aqui coloco el mensaje que deseeo dejarme sobre este tag"
+ 3. Finalmmente lo subimos al gitHub con:
+ git push --tags
+ 4. Vamos al gitHub y hacemos click en tags, luego en el nombre del tag creado, en este caso
+ es v1.0.0 y selecccionamos editar:
+Allí agregamos una descripcion y un cuerpo de mensjae y finalmente seleccionamos release.
+Gracias al tag que creamos ahora cuando descarguemos el release tag se descargara la plantilla tal y como
+la guardamos en el tag.
+
